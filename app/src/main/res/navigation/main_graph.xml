@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/fragmentMovie">
+
+    <fragment
+        android:id="@+id/fragmentMovie"
+        android:name="com.example.moviesapp.ui.movie.FragmentMovie"
+        android:label="fragment_movie"
+        tools:layout="@layout/fragment_movie" >
+        <action
+            android:id="@+id/action_fragmentMovie_to_fragmentMovieDetail"
+            app:destination="@id/fragmentMovieDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentMovieDetail"
+        android:name="com.example.moviesapp.ui.movieDetails.FragmentMovieDetail"
+        android:label="fragment_movie_detail"
+        tools:layout="@layout/fragment_movie_detail" >
+        <argument
+            android:name="posterImageUrl"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="backGroudImageUrl"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="voteAverage"
+            app:argType="float" />
+        <argument
+            android:name="voteCount"
+            app:argType="integer" />
+        <argument
+            android:name="overView"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="language"
+            app:argType="string" />
+        <argument
+            android:name="releaseDate"
+            app:argType="string" />
+    </fragment>
+</navigation>
